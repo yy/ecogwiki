@@ -16,9 +16,9 @@ class ACL(object):
         acl_r = acl_r or self._read or default_acl['read'] or []
         acl_w = acl_w or self._write or default_acl['write'] or []
 
-        if u'all' in acl_r or len(acl_r) == 0:
+        if 'all' in acl_r or len(acl_r) == 0:
             return True
-        elif user is not None and u'login' in acl_r:
+        elif user is not None and 'login' in acl_r:
             return True
         elif user is not None and (user.email() in acl_r or user.email() in acl_w):
             return True
@@ -35,7 +35,7 @@ class ACL(object):
             return False
         elif 'all' in acl_w:
             return True
-        elif (len(acl_w) == 0 or u'login' in acl_w) and user is not None:
+        elif (len(acl_w) == 0 or 'login' in acl_w) and user is not None:
             return True
         elif user is not None and user.email() in acl_w:
             return True
