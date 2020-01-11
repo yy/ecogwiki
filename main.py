@@ -48,8 +48,8 @@ ext.scan_exts()
 
 
 app = webapp2.WSGIApplication([
-    (ur'/sp\.(.*)', 'views.SpecialPageHandler'),
-    (ur'/([+-].*)', 'views.RelatedPagesHandler'),
-    (ur'/=(.*)', 'views.WikiqueryHandler'),
-    (ur'/(.*)', 'views.PageHandler'),
+    (r'/sp\.(.*)', 'views.SpecialPageHandler'),
+    (r'/([+-].*)', 'views.RelatedPagesHandler'),
+    (r'/=(.*)', 'views.WikiqueryHandler'),
+    (r'/(.*)', 'views.PageHandler'),
 ], debug=True)
